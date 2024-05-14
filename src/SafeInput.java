@@ -2,6 +2,9 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.*;
+import java.io.*;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 public class SafeInput {
 
@@ -328,7 +331,36 @@ public class SafeInput {
 
 
 
+    public static int jOptionRangedInt(String prompt, int low, int high){
 
+        int rangedInt;
+        String response = "";
+
+        do {
+            try{
+                //Get User Input
+                response = JOptionPane.showInputDialog(null, prompt);
+                //Convert to an Int
+                rangedInt = Integer.parseInt(response);
+                //Check if in range
+                if (rangedInt >= low && rangedInt <= high){
+                    break;
+                }
+                //If not in range, display error message
+                else{
+                    JOptionPane.showMessageDialog(null, "Not in Range");
+                }
+            }
+            //If Incorrect Input, display error message
+            catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null, "Incorrect Input");
+            }
+
+        }
+        while(true);
+
+        return rangedInt;
+    }
 
 
 
