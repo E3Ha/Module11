@@ -19,7 +19,10 @@ public class NoteAssignment {
 
         int rangedInt = SafeInput.jOptionRangedInt("Int 1-10: ", 1, 10);
 
-        JOptionPane.showMessageDialog(null, rangedInt);
+        JOptionPane.showMessageDialog(null, "Your Input: " + rangedInt);
+
+
+
 
 
 
