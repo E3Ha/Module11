@@ -28,10 +28,9 @@ public class LabFileAway {
                 fileName = chooser.getName(selectedFile);
                 //Dump contents into scanner
                 scan = new Scanner(selectedFile);
-                //Examine line by line, so long as another line exists
                 boolean found = false;
                 String[] words = new String[0];
-                //while there is a line...
+                //Examine line by line, so long as another line exists
                 while (scan.hasNextLine()) {
                     String line = scan.nextLine(); //Entire line = string
                     //Calculate amount of characters and lines
